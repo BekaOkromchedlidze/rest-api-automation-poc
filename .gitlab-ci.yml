@@ -1,0 +1,27 @@
+image: mcr.microsoft.com/playwright:v1.28.1-focal
+
+services:
+  - docker:19.03.13-dind
+
+variables:
+  GENERATED_REPROTS_DIR: 'playwright-report/'
+  AUTOMATION_TESTS_IMAGE: 'registry.gitlab.com/aderro/automation-tests:latest'
+
+stages:
+  - test
+
+Run tests:
+  stage: test
+  script:
+    - echo Running tests on move-${ENV}
+    - npm ci
+    - npm run test-${SYSTEM}
+  when: manual
+  variables:
+    ENV: 'regression'
+    SYSTEM: 'transport'
+  artifacts:
+    paths:
+      - $GENERATED_REPROTS_DIR
+    when: always
+    expire_in: 3 days

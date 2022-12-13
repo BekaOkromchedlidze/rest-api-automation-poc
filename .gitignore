@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+/test-results/
+/playwright-report/
+/playwright/.cache/
+login-state.json
+/test-results/
+/playwright-report/
+/playwright/.cache/

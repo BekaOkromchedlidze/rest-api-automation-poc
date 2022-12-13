@@ -1,0 +1,26 @@
+{
+  "name": "rest-api-automation-poc",
+  "version": "1.0.0",
+  "description": "Proof of concept project utilising Playwright framework for rest api automation testing",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Beka Okromchedlidze",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.28.1",
+    "dotenv": "^16.0.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.185",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "prettier": "^2.7.1"
+  }
+}
