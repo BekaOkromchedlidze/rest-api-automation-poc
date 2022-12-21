@@ -1,5 +1,6 @@
 import type { PlaywrightTestConfig } from '@playwright/test'
-import { devices } from '@playwright/test'
+import { devices, expect } from '@playwright/test'
+import playwrightApiMatchers from 'odottaa'
 
 /**
  * Read environment variables from file.
@@ -7,13 +8,13 @@ import { devices } from '@playwright/test'
  */
 // require('dotenv').config();
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+/* Extend playwright api matchers additional validations */
+expect.extend(playwrightApiMatchers)
+
 const config: PlaywrightTestConfig = {
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 60 * 1000 /* 30 seconds timeout. */,
+  timeout: 60 * 1000 /* 60 seconds timeout. */,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
@@ -45,7 +46,7 @@ const config: PlaywrightTestConfig = {
     // video:'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  globalSetup: require.resolve('./global-setup.ts'),
+  globalSetup: require.resolve('./global-setup'),
 
   /* Configure projects for major browsers */
   projects: [

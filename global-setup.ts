@@ -1,6 +1,9 @@
 /* eslint-disable global-require */
+// import { request } from '@playwright/test'
 
-module.exports = async () => {
+async function globalSetup() {
   // Configure ENV variables
   require('dotenv').config()
 }
+
+export default globalSetup
